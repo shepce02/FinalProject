@@ -1,4 +1,5 @@
 ﻿Public Class Criminal
+    Private criminalID As Integer
     Private firstName As String
     Private middleName As String
     Private lastName As String
@@ -11,6 +12,15 @@
     Private rec As Record
 
     'Properties for criminal variables
+
+    Public Property criminalIDP As Integer
+        Get
+            Return criminalID
+        End Get
+        Set(value As Integer)
+            criminalID = value
+        End Set
+    End Property
     Public Property firstNameP As String
         Get
             Return firstName
@@ -93,7 +103,8 @@
     End Property
 
     'Constructor
-    Public Sub New(ByVal pFirstName As String, ByVal pMiddleName As String, ByVal pLastName As String, ByVal pGender As String, ByVal pAge As Integer, ByVal pHeight As Double, ByVal pWeight As Double, ByVal pEyeColor As String, ByVal pRace As String, ByVal pRec As Record)
+    Public Sub New(ByVal pCriminalID As Integer, ByVal pFirstName As String, ByVal pMiddleName As String, ByVal pLastName As String, ByVal pGender As String, ByVal pAge As Integer, ByVal pHeight As Double, ByVal pWeight As Double, ByVal pEyeColor As String, ByVal pRace As String, ByVal pRec As Record)
+        criminalID = criminalIDP
         firstName = pFirstName
         middleName = pMiddleName
         lastName = pLastName

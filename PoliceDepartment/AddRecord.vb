@@ -50,6 +50,11 @@
             ErrorProvider1.SetError(txtAge, "Input proper age")
             Return
         End If
+        'Check for ID
+        If IsNumeric(txtID.Text) = False Then
+            ErrorProvider1.SetError(txtID, "Input proper ID")
+            Return
+        End If
         'Check for proper height
         If IsNumeric(txtHeight.Text) = False Then
             ErrorProvider1.SetError(txtHeight, "Input proper height")
@@ -111,17 +116,35 @@
 
         'Add criminal 
         b = New Record(txtDateArrested.Text, comboCrimeCommited.SelectedItem.ToString, txtArrestedBy.Text, boxLength.SelectedItem.ToString, comboBoxReleased.SelectedItem.ToString, txtReleaseDate.ToString)
-        a = New Criminal(txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, ComboBoxGender.SelectedItem.ToString, CInt(txtAge.Text), CDbl(txtHeight.Text), CDbl(txtWeight.Text), boxEyeColor.SelectedItem.ToString, race, b)
+        a = New Criminal(txtID.Text, txtFirstName.Text, txtMiddleName.Text, txtLastName.Text, ComboBoxGender.SelectedItem.ToString, CInt(txtAge.Text), CDbl(txtHeight.Text), CDbl(txtWeight.Text), boxEyeColor.SelectedItem.ToString, race, b)
         list.Add(a)
         MessageBox.Show("You have successfully added the criminal record to the database.")
         Me.Close()
     End Sub
 
     Private Sub AddRecord_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'CriminalDatebaseDataSet.CriminalTable' table. You can move, or remove it, as needed.
+        Me.CriminalTableTableAdapter.Fill(Me.CriminalDatebaseDataSet.CriminalTable)
+        'TODO: This line of code loads data into the 'CriminalDatebaseDataSet.CriminalTable' table. You can move, or remove it, as needed.
+        Me.CriminalTableTableAdapter.Fill(Me.CriminalDatebaseDataSet.CriminalTable)
 
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         Me.Close()
+    End Sub
+
+    Private Sub CriminalTableBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
+        Me.Validate()
+        Me.CriminalTableBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.CriminalDatebaseDataSet)
+
+    End Sub
+
+    Private Sub CriminalTableBindingNavigatorSaveItem_Click_1(sender As Object, e As EventArgs)
+        Me.Validate()
+        Me.CriminalTableBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.CriminalDatebaseDataSet)
+
     End Sub
 End Class

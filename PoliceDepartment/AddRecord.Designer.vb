@@ -38,10 +38,10 @@ Partial Class AddRecord
         Me.lblWeight = New System.Windows.Forms.Label()
         Me.txtWeight = New System.Windows.Forms.TextBox()
         Me.boxRace = New System.Windows.Forms.GroupBox()
-        Me.RadButtonWhite = New System.Windows.Forms.RadioButton()
-        Me.RadButtonBlack = New System.Windows.Forms.RadioButton()
-        Me.RadButonHispanic = New System.Windows.Forms.RadioButton()
         Me.RadButtonAsian = New System.Windows.Forms.RadioButton()
+        Me.RadButonHispanic = New System.Windows.Forms.RadioButton()
+        Me.RadButtonBlack = New System.Windows.Forms.RadioButton()
+        Me.RadButtonWhite = New System.Windows.Forms.RadioButton()
         Me.lblEyeColor = New System.Windows.Forms.Label()
         Me.boxEyeColor = New System.Windows.Forms.ComboBox()
         Me.lblDateArr = New System.Windows.Forms.Label()
@@ -52,15 +52,17 @@ Partial Class AddRecord
         Me.txtArrestedBy = New System.Windows.Forms.TextBox()
         Me.GroupArrestInfo = New System.Windows.Forms.GroupBox()
         Me.GroupJudgedment = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.boxLength = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.comboBoxReleased = New System.Windows.Forms.ComboBox()
-        Me.lblReleaseDate = New System.Windows.Forms.Label()
         Me.txtReleaseDate = New System.Windows.Forms.TextBox()
+        Me.lblReleaseDate = New System.Windows.Forms.Label()
+        Me.comboBoxReleased = New System.Windows.Forms.ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.boxLength = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.btnSubmit = New System.Windows.Forms.Button()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.lblID = New System.Windows.Forms.Label()
+        Me.txtID = New System.Windows.Forms.TextBox()
         Me.boxRace.SuspendLayout()
         Me.GroupArrestInfo.SuspendLayout()
         Me.GroupJudgedment.SuspendLayout()
@@ -194,27 +196,15 @@ Partial Class AddRecord
         Me.boxRace.TabStop = False
         Me.boxRace.Text = "Race"
         '
-        'RadButtonWhite
+        'RadButtonAsian
         '
-        Me.RadButtonWhite.AutoSize = True
-        Me.RadButtonWhite.Checked = True
-        Me.RadButtonWhite.Location = New System.Drawing.Point(24, 30)
-        Me.RadButtonWhite.Name = "RadButtonWhite"
-        Me.RadButtonWhite.Size = New System.Drawing.Size(65, 21)
-        Me.RadButtonWhite.TabIndex = 0
-        Me.RadButtonWhite.TabStop = True
-        Me.RadButtonWhite.Text = "White"
-        Me.RadButtonWhite.UseVisualStyleBackColor = True
-        '
-        'RadButtonBlack
-        '
-        Me.RadButtonBlack.AutoSize = True
-        Me.RadButtonBlack.Location = New System.Drawing.Point(118, 30)
-        Me.RadButtonBlack.Name = "RadButtonBlack"
-        Me.RadButtonBlack.Size = New System.Drawing.Size(63, 21)
-        Me.RadButtonBlack.TabIndex = 1
-        Me.RadButtonBlack.Text = "Black"
-        Me.RadButtonBlack.UseVisualStyleBackColor = True
+        Me.RadButtonAsian.AutoSize = True
+        Me.RadButtonAsian.Location = New System.Drawing.Point(118, 71)
+        Me.RadButtonAsian.Name = "RadButtonAsian"
+        Me.RadButtonAsian.Size = New System.Drawing.Size(64, 21)
+        Me.RadButtonAsian.TabIndex = 16
+        Me.RadButtonAsian.Text = "Asian"
+        Me.RadButtonAsian.UseVisualStyleBackColor = True
         '
         'RadButonHispanic
         '
@@ -226,15 +216,27 @@ Partial Class AddRecord
         Me.RadButonHispanic.Text = "Hispanic"
         Me.RadButonHispanic.UseVisualStyleBackColor = True
         '
-        'RadButtonAsian
+        'RadButtonBlack
         '
-        Me.RadButtonAsian.AutoSize = True
-        Me.RadButtonAsian.Location = New System.Drawing.Point(118, 71)
-        Me.RadButtonAsian.Name = "RadButtonAsian"
-        Me.RadButtonAsian.Size = New System.Drawing.Size(64, 21)
-        Me.RadButtonAsian.TabIndex = 16
-        Me.RadButtonAsian.Text = "Asian"
-        Me.RadButtonAsian.UseVisualStyleBackColor = True
+        Me.RadButtonBlack.AutoSize = True
+        Me.RadButtonBlack.Location = New System.Drawing.Point(118, 30)
+        Me.RadButtonBlack.Name = "RadButtonBlack"
+        Me.RadButtonBlack.Size = New System.Drawing.Size(63, 21)
+        Me.RadButtonBlack.TabIndex = 1
+        Me.RadButtonBlack.Text = "Black"
+        Me.RadButtonBlack.UseVisualStyleBackColor = True
+        '
+        'RadButtonWhite
+        '
+        Me.RadButtonWhite.AutoSize = True
+        Me.RadButtonWhite.Checked = True
+        Me.RadButtonWhite.Location = New System.Drawing.Point(24, 30)
+        Me.RadButtonWhite.Name = "RadButtonWhite"
+        Me.RadButtonWhite.Size = New System.Drawing.Size(65, 21)
+        Me.RadButtonWhite.TabIndex = 0
+        Me.RadButtonWhite.TabStop = True
+        Me.RadButtonWhite.Text = "White"
+        Me.RadButtonWhite.UseVisualStyleBackColor = True
         '
         'lblEyeColor
         '
@@ -334,14 +336,42 @@ Partial Class AddRecord
         Me.GroupJudgedment.TabStop = False
         Me.GroupJudgedment.Text = "Judgement Information"
         '
-        'Label1
+        'txtReleaseDate
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(40, 42)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(76, 17)
-        Me.Label1.TabIndex = 20
-        Me.Label1.Text = "Sentenced"
+        Me.txtReleaseDate.Enabled = False
+        Me.txtReleaseDate.Location = New System.Drawing.Point(136, 130)
+        Me.txtReleaseDate.Name = "txtReleaseDate"
+        Me.txtReleaseDate.Size = New System.Drawing.Size(183, 22)
+        Me.txtReleaseDate.TabIndex = 15
+        '
+        'lblReleaseDate
+        '
+        Me.lblReleaseDate.AutoSize = True
+        Me.lblReleaseDate.Enabled = False
+        Me.lblReleaseDate.Location = New System.Drawing.Point(14, 130)
+        Me.lblReleaseDate.Name = "lblReleaseDate"
+        Me.lblReleaseDate.Size = New System.Drawing.Size(102, 17)
+        Me.lblReleaseDate.TabIndex = 24
+        Me.lblReleaseDate.Text = "Released Date"
+        '
+        'comboBoxReleased
+        '
+        Me.comboBoxReleased.FormattingEnabled = True
+        Me.comboBoxReleased.ItemHeight = 16
+        Me.comboBoxReleased.Items.AddRange(New Object() {"Yes", "No"})
+        Me.comboBoxReleased.Location = New System.Drawing.Point(136, 89)
+        Me.comboBoxReleased.Name = "comboBoxReleased"
+        Me.comboBoxReleased.Size = New System.Drawing.Size(81, 24)
+        Me.comboBoxReleased.TabIndex = 23
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(48, 89)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(68, 17)
+        Me.Label2.TabIndex = 22
+        Me.Label2.Text = "Released"
         '
         'boxLength
         '
@@ -354,42 +384,14 @@ Partial Class AddRecord
         Me.boxLength.Size = New System.Drawing.Size(183, 24)
         Me.boxLength.TabIndex = 21
         '
-        'Label2
+        'Label1
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(48, 89)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(68, 17)
-        Me.Label2.TabIndex = 22
-        Me.Label2.Text = "Released"
-        '
-        'comboBoxReleased
-        '
-        Me.comboBoxReleased.FormattingEnabled = True
-        Me.comboBoxReleased.ItemHeight = 16
-        Me.comboBoxReleased.Items.AddRange(New Object() {"Yes", "No"})
-        Me.comboBoxReleased.Location = New System.Drawing.Point(136, 89)
-        Me.comboBoxReleased.Name = "comboBoxReleased"
-        Me.comboBoxReleased.Size = New System.Drawing.Size(81, 24)
-        Me.comboBoxReleased.TabIndex = 23
-        '
-        'lblReleaseDate
-        '
-        Me.lblReleaseDate.AutoSize = True
-        Me.lblReleaseDate.Enabled = False
-        Me.lblReleaseDate.Location = New System.Drawing.Point(14, 130)
-        Me.lblReleaseDate.Name = "lblReleaseDate"
-        Me.lblReleaseDate.Size = New System.Drawing.Size(102, 17)
-        Me.lblReleaseDate.TabIndex = 24
-        Me.lblReleaseDate.Text = "Released Date"
-        '
-        'txtReleaseDate
-        '
-        Me.txtReleaseDate.Enabled = False
-        Me.txtReleaseDate.Location = New System.Drawing.Point(136, 130)
-        Me.txtReleaseDate.Name = "txtReleaseDate"
-        Me.txtReleaseDate.Size = New System.Drawing.Size(183, 22)
-        Me.txtReleaseDate.TabIndex = 15
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(40, 42)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(76, 17)
+        Me.Label1.TabIndex = 20
+        Me.Label1.Text = "Sentenced"
         '
         'btnSubmit
         '
@@ -413,11 +415,29 @@ Partial Class AddRecord
         '
         Me.ErrorProvider1.ContainerControl = Me
         '
+        'lblID
+        '
+        Me.lblID.AutoSize = True
+        Me.lblID.Location = New System.Drawing.Point(381, 214)
+        Me.lblID.Name = "lblID"
+        Me.lblID.Size = New System.Drawing.Size(21, 17)
+        Me.lblID.TabIndex = 27
+        Me.lblID.Text = "ID"
+        '
+        'txtID
+        '
+        Me.txtID.Location = New System.Drawing.Point(421, 211)
+        Me.txtID.Name = "txtID"
+        Me.txtID.Size = New System.Drawing.Size(70, 22)
+        Me.txtID.TabIndex = 28
+        '
         'AddRecord
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(747, 545)
+        Me.ClientSize = New System.Drawing.Size(783, 545)
+        Me.Controls.Add(Me.txtID)
+        Me.Controls.Add(Me.lblID)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btnSubmit)
         Me.Controls.Add(Me.GroupJudgedment)
@@ -491,4 +511,6 @@ Partial Class AddRecord
     Friend WithEvents btnSubmit As System.Windows.Forms.Button
     Friend WithEvents btnCancel As System.Windows.Forms.Button
     Friend WithEvents ErrorProvider1 As System.Windows.Forms.ErrorProvider
+    Friend WithEvents txtID As System.Windows.Forms.TextBox
+    Friend WithEvents lblID As System.Windows.Forms.Label
 End Class
